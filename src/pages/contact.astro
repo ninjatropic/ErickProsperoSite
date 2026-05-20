@@ -1,0 +1,139 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Contact"
+  description="Book Erick Prospero to speak at your conference, partner on learning initiatives, or appear on your podcast. Reach out through the contact form."
+>
+
+  <!-- Page Header -->
+  <section class="bg-navy text-white py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-gold text-sm font-medium uppercase tracking-widest mb-3">Contact</p>
+      <h1 class="font-serif text-4xl md:text-5xl font-bold">Work With Erick</h1>
+    </div>
+  </section>
+
+  <!-- Form Section -->
+  <section class="bg-white py-20 px-6">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-charcoal/70 text-lg leading-relaxed mb-12">
+        Whether you are looking for a keynote speaker for your next conference, a strategic partner for your learning initiatives, or a guest for your podcast, reach out below.
+      </p>
+
+      <form
+        method="POST"
+        data-netlify="true"
+        netlify
+        name="contact"
+        class="space-y-6"
+      >
+        <input type="hidden" name="form-name" value="contact" />
+
+        <!-- Full Name -->
+        <div>
+          <label for="name" class="block text-sm font-semibold text-charcoal mb-2">
+            Full Name <span class="text-gold">*</span>
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            class="w-full border border-charcoal/20 rounded px-4 py-3 text-charcoal text-sm focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors"
+            placeholder="Your full name"
+          />
+        </div>
+
+        <!-- Email -->
+        <div>
+          <label for="email" class="block text-sm font-semibold text-charcoal mb-2">
+            Email Address <span class="text-gold">*</span>
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            class="w-full border border-charcoal/20 rounded px-4 py-3 text-charcoal text-sm focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors"
+            placeholder="you@organization.com"
+          />
+        </div>
+
+        <!-- Organization -->
+        <div>
+          <label for="organization" class="block text-sm font-semibold text-charcoal mb-2">
+            Organization <span class="text-charcoal/40 font-normal">(optional)</span>
+          </label>
+          <input
+            type="text"
+            id="organization"
+            name="organization"
+            class="w-full border border-charcoal/20 rounded px-4 py-3 text-charcoal text-sm focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors"
+            placeholder="Your organization or company"
+          />
+        </div>
+
+        <!-- Type of Inquiry -->
+        <div>
+          <label for="inquiry" class="block text-sm font-semibold text-charcoal mb-2">
+            Type of Inquiry <span class="text-gold">*</span>
+          </label>
+          <select
+            id="inquiry"
+            name="inquiry"
+            required
+            class="w-full border border-charcoal/20 rounded px-4 py-3 text-charcoal text-sm focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors bg-white appearance-none"
+          >
+            <option value="" disabled selected>Select an option</option>
+            <option value="Speaking Engagement">Speaking Engagement</option>
+            <option value="Podcast Appearance">Podcast Appearance</option>
+            <option value="Strategic Consulting">Strategic Consulting</option>
+            <option value="Media or Press">Media or Press</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <!-- Message -->
+        <div>
+          <label for="message" class="block text-sm font-semibold text-charcoal mb-2">
+            Message <span class="text-gold">*</span>
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            required
+            rows="6"
+            class="w-full border border-charcoal/20 rounded px-4 py-3 text-charcoal text-sm focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors resize-vertical"
+            placeholder="Tell Erick about your event, organization, and what you have in mind."
+          ></textarea>
+        </div>
+
+        <!-- Submit -->
+        <div>
+          <button
+            type="submit"
+            class="w-full sm:w-auto px-10 py-4 bg-gold text-navy font-semibold text-sm rounded hover:bg-gold-dark transition-colors"
+          >
+            Send Message
+          </button>
+        </div>
+      </form>
+
+      <!-- Fallback -->
+      <div class="mt-16 pt-8 border-t border-charcoal/10">
+        <p class="text-sm text-charcoal/60">
+          Prefer email directly? Reach out at{' '}
+          <a
+            href="mailto:hello@erickprospero.com"
+            class="text-gold hover:text-gold-dark font-medium transition-colors"
+          >
+            hello@erickprospero.com
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

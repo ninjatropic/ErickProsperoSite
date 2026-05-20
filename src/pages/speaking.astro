@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SpeakingTopic from '../components/SpeakingTopic.astro';
+
+const featuredTopics = [
+  {
+    title: 'AI-Powered Learning: How to Modernize Your Content Operations',
+    description:
+      'Most organizations are still producing eLearning the same way they did a decade ago, and the results show. This session walks learning leaders through a practical framework for integrating AI into the content production process, from scripting and storyboarding to voiceover, video, and quality review. Attendees leave with a concrete roadmap for increasing output, reducing production time, and improving the quality of their learning experiences without expanding headcount.',
+  },
+  {
+    title: 'Education as a Revenue Engine: Turning Your Content Into a Profitable Product',
+    description:
+      'Education is one of the most underutilized assets in the association and membership world. This session helps leaders reframe their learning programs as products with real market value, and walks through the steps to build monetized learning ecosystems that generate recurring revenue. Attendees leave with a strategy for packaging, pricing, and selling educational content to members, non-members, and partner organizations.',
+  },
+];
+
+const additionalTopics = [
+  {
+    title: 'Immersive Microlearning: Moving Beyond Click-Next eLearning',
+    description:
+      'How to use interactive environments, narrative exploration, and media-rich design to create learning experiences that improve engagement and behavioral retention. This session gives L&D teams a practical toolkit for designing immersive learning without a Hollywood budget.',
+  },
+  {
+    title: 'AI-Accelerated Video Production for L&D Teams',
+    description:
+      'A practical walkthrough of how generative AI tools can compress microlearning video production timelines while preserving instructional quality and learner trust. Designed for learning teams that need to produce more content with the same or fewer resources.',
+  },
+  {
+    title: 'Building Your Brand as a Subject Matter Expert',
+    description:
+      'How industry professionals can grow their influence and credibility by contributing to educational content and positioning themselves as trusted voices in their field. Practical steps for SMEs who want to expand their reach beyond their current role.',
+  },
+];
+
+const engagements = [
+  { event: 'Articuland Summit', org: 'Articuland', year: '2025' },
+  { event: 'Adobe Learning Summit', org: 'Adobe', year: '2025' },
+  { event: 'Healthcare Education Association Conference', org: 'HCEA', year: '2025' },
+  { event: 'DevLearn DemoFest', org: 'The Learning Guild', year: '2025' },
+  { event: 'Institute for Supply Management Conference', org: 'ISM', year: '2016' },
+];
+---
+
+<BaseLayout
+  title="Speaking"
+  description="Erick Prospero speaks at association conferences, enterprise learning summits, and industry events on AI-powered learning and education as a revenue engine."
+>
+
+  <!-- Page Header -->
+  <section class="bg-navy text-white py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-gold text-sm font-medium uppercase tracking-widest mb-3">Speaking</p>
+      <h1 class="font-serif text-4xl md:text-5xl font-bold mb-4">On Stage</h1>
+      <p class="text-white/70 text-lg max-w-2xl">
+        Erick speaks at association conferences, enterprise learning summits, and industry events on two core topics.
+      </p>
+    </div>
+  </section>
+
+  <!-- Featured Topics -->
+  <section class="bg-white py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-gold text-xs font-semibold uppercase tracking-widest mb-4">Signature Sessions</p>
+      <h2 class="font-serif text-3xl md:text-4xl font-bold text-navy mb-12">Featured Topics</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {featuredTopics.map((topic) => (
+          <SpeakingTopic title={topic.title} description={topic.description} featured={true} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Additional Topics -->
+  <section class="bg-cream py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-gold text-xs font-semibold uppercase tracking-widest mb-4">Also Available</p>
+      <h2 class="font-serif text-3xl font-bold text-navy mb-10">Additional Sessions</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {additionalTopics.map((topic) => (
+          <SpeakingTopic title={topic.title} description={topic.description} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Past Engagements -->
+  <section class="bg-white py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-gold text-xs font-semibold uppercase tracking-widest mb-4">Track Record</p>
+      <h2 class="font-serif text-3xl font-bold text-navy mb-10">Past Speaking Engagements</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="border-b-2 border-navy/10">
+              <th class="pb-3 text-xs font-semibold text-charcoal/50 uppercase tracking-wider pr-8">Event</th>
+              <th class="pb-3 text-xs font-semibold text-charcoal/50 uppercase tracking-wider pr-8">Organization</th>
+              <th class="pb-3 text-xs font-semibold text-charcoal/50 uppercase tracking-wider">Year</th>
+            </tr>
+          </thead>
+          <tbody>
+            {engagements.map(({ event, org, year }) => (
+              <tr class="border-b border-charcoal/10 hover:bg-cream transition-colors">
+                <td class="py-4 pr-8 font-medium text-navy text-sm">{event}</td>
+                <td class="py-4 pr-8 text-charcoal/70 text-sm">{org}</td>
+                <td class="py-4 text-charcoal/70 text-sm">{year}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-navy text-white py-20 px-6 text-center">
+    <div class="max-w-2xl mx-auto">
+      <p class="text-gold text-xs font-semibold uppercase tracking-widest mb-4">Ready to Connect?</p>
+      <h2 class="font-serif text-3xl md:text-4xl font-bold mb-5">Invite Erick to Speak</h2>
+      <p class="text-white/70 leading-relaxed mb-8">
+        Whether you are planning a conference, summit, or association event, reach out to discuss topics, availability, and fit.
+      </p>
+      <a
+        href="/contact"
+        class="inline-block px-8 py-4 bg-gold text-navy font-semibold text-sm rounded hover:bg-gold-dark transition-colors"
+      >
+        Invite Erick to Speak
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>

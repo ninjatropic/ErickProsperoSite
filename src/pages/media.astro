@@ -1,0 +1,191 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import VideoCard from '../components/VideoCard.astro';
+import PressCard from '../components/PressCard.astro';
+
+const speakingVideos = [
+  {
+    platform: 'vimeo' as const,
+    videoId: '1129913145',
+    vimeoHash: '881ccb925a',
+    title: 'Articuland Summit',
+    meta: 'Articuland Summit, Boston MA, 2025',
+    description:
+      'A session on transforming traditional eLearning into immersive experiences using Storyline 360 workflows, interactive hotspots, and 360-degree learning environments.',
+  },
+  {
+    platform: 'vimeo' as const,
+    videoId: '1129913439',
+    vimeoHash: 'bbdda09b2c',
+    title: 'Adobe Learning Conference',
+    meta: 'Adobe Learning Summit, Las Vegas NV, 2025',
+    description:
+      'A demonstration of how generative AI tools can accelerate microlearning video production while preserving instructional quality and learner trust.',
+  },
+  {
+    platform: 'vimeo' as const,
+    videoId: '1129912729',
+    vimeoHash: 'a903cb792c',
+    title: 'Building a Brand as a Subject Matter Expert',
+    meta: 'Institute for Supply Management Conference, 2016',
+    description:
+      'A session for industry leaders on how subject matter experts can grow their professional influence and credibility by creating and contributing to educational content.',
+  },
+];
+
+const podcastVideos = [
+  {
+    platform: 'youtube' as const,
+    videoId: 'SwAiP872z-0',
+    title: 'How to Design Training That Fits the Job',
+    meta: 'ft. JD Dillon, May 2026',
+    description:
+      'Why traditional training fails frontline workers and what it means to enable performance in the flow of work. A conversation that challenges the idea that more courses equal better outcomes.',
+  },
+  {
+    platform: 'youtube' as const,
+    videoId: 'noTgBjpX9h8',
+    title: '5 Ways Associations Can Align Learning Products With Market Demand',
+    meta: 'ft. Gayle Claman, ASCE, May 2026',
+    description:
+      'How associations can shift from simply adding courses to building intentional, market-aligned learning portfolios. With Gayle Claman, Managing Director of Education and Credentialing at the American Society of Civil Engineers.',
+  },
+  {
+    platform: 'youtube' as const,
+    videoId: 'ADKK7bsWAEw',
+    title: '5 Smart Steps to Choose the Right LMS for Your Association',
+    meta: 'ft. John Leh',
+    description:
+      'A practical framework for selecting a learning management system built around association-specific needs, priorities, and member expectations.',
+  },
+  {
+    platform: 'youtube' as const,
+    videoId: 'YYfzW0HeMAw',
+    title: 'Stop Tracking Data Like This (What Associations Get Wrong)',
+    meta: 'ft. Tamer Ali',
+    description:
+      'A direct look at the analytics mistakes associations commonly make and how to shift toward data that actually drives learning decisions and demonstrates program value.',
+  },
+];
+
+const articles = [
+  {
+    outlet: 'eLearning Industry',
+    title: 'Driving Non-Dues Revenue With eLearning In Associations',
+    description:
+      'How associations can diversify income streams beyond membership dues by leveraging eLearning products to create sustainable, ongoing revenue.',
+    date: 'April 28, 2026',
+    linkLabel: 'Read',
+    href: 'https://elearningindustry.com/driving-non-dues-revenue-with-elearning-in-associations',
+  },
+  {
+    outlet: 'eLearning Industry',
+    title: 'Maximizing Impact With LMS Analytics In Association L&D',
+    description:
+      'How LMS analytics enable associations to track learner engagement, measure training effectiveness, and demonstrate return on investment to stakeholders.',
+    date: 'May 12, 2026',
+    linkLabel: 'Read',
+    href: 'https://elearningindustry.com/maximizing-impact-with-lms-analytics-in-association-ld',
+  },
+  {
+    outlet: 'eLearning Industry',
+    title: 'Real-World Microlearning Examples of Competency-Based Training for Associations',
+    description:
+      'How competency-based training paired with microlearning helps associations deliver focused skill development aligned to professional standards and member career advancement.',
+    date: 'April 14, 2026',
+    linkLabel: 'Read',
+    href: 'https://elearningindustry.com/real-world-microlearning-examples-of-competency-based-training-for-associations',
+  },
+  {
+    outlet: 'eLearning Industry',
+    title: 'Microlearning Instructional Design: How Associations Build Smarter Training',
+    description:
+      'Strategies for designing focused microlearning modules that align with member competencies, work on mobile, and incorporate feedback loops to improve effectiveness.',
+    date: 'March 31, 2026',
+    linkLabel: 'Read',
+    href: 'https://elearningindustry.com/microlearning-instructional-design-how-associations-build-smarter-training',
+  },
+];
+---
+
+<BaseLayout
+  title="Media"
+  description="Watch Erick Prospero's conference sessions and podcast conversations on AI, microlearning, and association education. Read his published articles on eLearning Industry."
+>
+
+  <!-- Page Header -->
+  <section class="bg-navy text-white py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-gold text-sm font-medium uppercase tracking-widest mb-3">Media</p>
+      <h1 class="font-serif text-4xl md:text-5xl font-bold mb-4">Videos and Press</h1>
+      <p class="text-white/70 text-lg max-w-2xl">
+        Conference sessions, podcast conversations, and published writing on AI, microlearning, and association education.
+      </p>
+    </div>
+  </section>
+
+  <!-- Speaking Videos -->
+  <section class="bg-white py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-gold text-xs font-semibold uppercase tracking-widest mb-4">On Stage</p>
+      <h2 class="font-serif text-3xl font-bold text-navy mb-4">Speaking Videos</h2>
+      <p class="text-charcoal/70 mb-12">Watch Erick presenting at conferences and industry events.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        {speakingVideos.map((v) => (
+          <VideoCard
+            platform={v.platform}
+            videoId={v.videoId}
+            vimeoHash={v.vimeoHash}
+            title={v.title}
+            description={v.description}
+            meta={v.meta}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Microlearning Lab Podcast -->
+  <section class="bg-cream py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-gold text-xs font-semibold uppercase tracking-widest mb-4">The Microlearning Lab</p>
+      <h2 class="font-serif text-3xl font-bold text-navy mb-4">Podcast Conversations</h2>
+      <p class="text-charcoal/70 mb-12">Conversations on AI, microlearning, and the future of association education.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        {podcastVideos.map((v) => (
+          <VideoCard
+            platform={v.platform}
+            videoId={v.videoId}
+            title={v.title}
+            description={v.description}
+            meta={v.meta}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Articles -->
+  <section class="bg-white py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-gold text-xs font-semibold uppercase tracking-widest mb-4">Published Writing</p>
+      <h2 class="font-serif text-3xl font-bold text-navy mb-4">Articles</h2>
+      <p class="text-charcoal/70 mb-12">Podcast appearances, industry articles, and contributions to the learning community.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {articles.map((a) => (
+          <PressCard
+            outlet={a.outlet}
+            title={a.title}
+            description={a.description}
+            date={a.date}
+            linkLabel={a.linkLabel}
+            href={a.href}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<script src="https://player.vimeo.com/api/player.js" is:inline></script>

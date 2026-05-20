@@ -1,0 +1,79 @@
+---
+const pathname = Astro.url.pathname;
+
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/speaking', label: 'Speaking' },
+  { href: '/media', label: 'Media' },
+  { href: '/contact', label: 'Contact' },
+];
+
+function isActive(href: string) {
+  if (href === '/') return pathname === '/';
+  return pathname.startsWith(href);
+}
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-navy">
+  <div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
+
+    <!-- Wordmark -->
+    <a href="/" class="font-serif text-xl text-gold font-semibold tracking-wide hover:text-gold-dark transition-colors">
+      Erick Prospero
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex items-center gap-8">
+      {links.map(({ href, label }) => (
+        <a
+          href={href}
+          class={`text-sm font-medium transition-colors ${
+            isActive(href)
+              ? 'text-gold'
+              : 'text-white/80 hover:text-white'
+          }`}
+        >
+          {label}
+        </a>
+      ))}
+      <a
+        href="/contact"
+        class="ml-2 px-4 py-2 bg-gold text-navy text-sm font-semibold rounded hover:bg-gold-dark transition-colors"
+      >
+        Book Me to Speak
+      </a>
+    </nav>
+
+    <!-- Mobile hamburger -->
+    <label class="md:hidden cursor-pointer flex flex-col gap-1.5 p-2" for="nav-toggle" aria-label="Toggle navigation">
+      <span class="block w-6 h-0.5 bg-white"></span>
+      <span class="block w-6 h-0.5 bg-white"></span>
+      <span class="block w-6 h-0.5 bg-white"></span>
+    </label>
+  </div>
+
+  <!-- Mobile menu -->
+  <input type="checkbox" id="nav-toggle" class="peer hidden" />
+  <nav class="md:hidden hidden peer-checked:block bg-navy border-t border-white/10 px-6 pb-4">
+    {links.map(({ href, label }) => (
+      <a
+        href={href}
+        class={`block py-3 text-sm font-medium border-b border-white/10 transition-colors ${
+          isActive(href) ? 'text-gold' : 'text-white/80 hover:text-white'
+        }`}
+      >
+        {label}
+      </a>
+    ))}
+    <a
+      href="/contact"
+      class="mt-4 block text-center px-4 py-2 bg-gold text-navy text-sm font-semibold rounded hover:bg-gold-dark transition-colors"
+    >
+      Book Me to Speak
+    </a>
+  </nav>
+</header>
+
+<!-- Spacer so content doesn't hide under fixed nav -->
+<div class="h-16"></div>

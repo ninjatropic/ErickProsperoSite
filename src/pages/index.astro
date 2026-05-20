@@ -1,0 +1,161 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Erick Prospero"
+  description="Erick Prospero helps organizations build smarter learning and turn education into revenue. Speaker, strategist, and founder of Ninja Tropic eLearning."
+>
+
+  <!-- Hero -->
+  <section class="bg-navy text-white py-28 md:py-40 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-gold text-sm font-medium uppercase tracking-widest mb-4">Founder, Ninja Tropic eLearning</p>
+      <h1 class="font-serif text-5xl md:text-7xl font-bold leading-tight mb-6">
+        Erick Prospero
+      </h1>
+      <p class="text-white/80 text-xl md:text-2xl leading-relaxed max-w-2xl mx-auto mb-10">
+        Helping Organizations Build Smarter Learning and Turn Education Into Revenue
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/contact"
+          class="px-8 py-4 bg-gold text-navy font-semibold text-base rounded hover:bg-gold-dark transition-colors"
+        >
+          Book Me to Speak
+        </a>
+        <a
+          href="/about"
+          class="px-8 py-4 border border-white/30 text-white font-medium text-base rounded hover:border-white/60 hover:bg-white/5 transition-colors"
+        >
+          Learn About Erick
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Two Pillars -->
+  <section class="bg-white py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-center text-xs font-semibold text-gold uppercase tracking-widest mb-4">Two Core Disciplines</p>
+      <h2 class="font-serif text-3xl md:text-4xl text-navy text-center font-bold mb-14">
+        What Erick Is Known For
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- Pillar 1 -->
+        <div class="border-t-4 border-gold pt-8 px-8 pb-8 bg-cream rounded-sm">
+          <div class="text-gold text-xs font-semibold uppercase tracking-widest mb-3">Pillar One</div>
+          <h3 class="font-serif text-2xl font-bold text-navy mb-4">
+            AI-Powered Learning Content Production
+          </h3>
+          <p class="text-charcoal/80 leading-relaxed mb-6">
+            Erick helps organizations leverage artificial intelligence to modernize how educational content is produced, personalized, and delivered at scale. His work moves teams beyond static eLearning toward dynamic, media-rich experiences that improve learner engagement while dramatically increasing production efficiency.
+          </p>
+          <a href="/speaking" class="text-gold font-semibold text-sm hover:text-gold-dark transition-colors inline-flex items-center gap-1">
+            Learn More
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="border-t-4 border-gold pt-8 px-8 pb-8 bg-cream rounded-sm">
+          <div class="text-gold text-xs font-semibold uppercase tracking-widest mb-3">Pillar Two</div>
+          <h3 class="font-serif text-2xl font-bold text-navy mb-4">
+            Education as a Revenue Engine
+          </h3>
+          <p class="text-charcoal/80 leading-relaxed mb-6">
+            Erick helps associations, membership organizations, and learning brands turn educational programs into sustainable revenue engines. He specializes in building monetized learning ecosystems that increase member value, expand audience reach, and create recurring income opportunities.
+          </p>
+          <a href="/speaking" class="text-gold font-semibold text-sm hover:text-gold-dark transition-colors inline-flex items-center gap-1">
+            Learn More
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Logos Bar -->
+  <section class="bg-cream border-y border-charcoal/10 py-14 px-6">
+    <div class="max-w-6xl mx-auto text-center">
+      <p class="text-xs font-semibold text-charcoal/40 uppercase tracking-widest mb-8">Trusted By</p>
+      <div class="flex flex-wrap justify-center gap-x-10 gap-y-4 items-center">
+        {[
+          'ATD',
+          'ASAE',
+          'The Learning Guild',
+          'Chief Learning Officer',
+          'DevLearn',
+          'eLearning Industry',
+        ].map((org) => (
+          <span class="text-charcoal/40 font-semibold text-sm tracking-wide">{org}</span>
+        ))}
+      </div>
+      <p class="text-xs text-charcoal/30 mt-6 italic">Logos will be added. Organizations shown are representative.</p>
+    </div>
+  </section>
+
+  <!-- Awards Strip -->
+  <section class="bg-charcoal text-white py-16 px-6">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-center text-xs font-semibold text-gold uppercase tracking-widest mb-10">Industry Recognition</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+
+        <!-- Brandon Hall -->
+        <div class="flex items-start gap-5">
+          <img
+            src="https://placehold.co/72x72/c9a84c/0f1f3d?text=BH"
+            alt="Brandon Hall Group award badge"
+            width="72"
+            height="72"
+            class="rounded flex-shrink-0"
+          />
+          <div>
+            <p class="font-serif text-lg font-semibold mb-1">Brandon Hall Group</p>
+            <p class="text-white/70 text-sm leading-relaxed">
+              4 Excellence Awards (2025), including Gold recognition for Best Association Learning Program and Best Off-the-Shelf eLearning Course.
+            </p>
+          </div>
+        </div>
+
+        <!-- eLearning Industry -->
+        <div class="flex items-start gap-5">
+          <img
+            src="https://placehold.co/72x72/c9a84c/0f1f3d?text=ELI"
+            alt="eLearning Industry award badge"
+            width="72"
+            height="72"
+            class="rounded flex-shrink-0"
+          />
+          <div>
+            <p class="font-serif text-lg font-semibold mb-1">eLearning Industry</p>
+            <p class="text-white/70 text-sm leading-relaxed">
+              Top 10 Agency for Custom eLearning Development, Staff Augmentation, and Leveraging AI for Educational Content.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Media Teaser -->
+  <section class="bg-white py-20 px-6 text-center">
+    <div class="max-w-2xl mx-auto">
+      <p class="text-xs font-semibold text-gold uppercase tracking-widest mb-4">See the Work</p>
+      <h2 class="font-serif text-3xl md:text-4xl font-bold text-navy mb-5">
+        See Erick in Action
+      </h2>
+      <p class="text-charcoal/70 leading-relaxed mb-8">
+        Watch conference sessions and podcast conversations on AI, microlearning, and association education.
+      </p>
+      <a
+        href="/media"
+        class="inline-block px-8 py-4 bg-navy text-white font-semibold text-sm rounded hover:bg-navy/80 transition-colors"
+      >
+        Watch and Read
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>
